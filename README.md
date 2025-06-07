@@ -7,16 +7,6 @@ Get a random item out of a sequential collection.
 ```rs
 use random_item::random_item;
 
-let numbers = (0..99).collect::<Vec<u8>>();
-
-let random_number = random_item(&numbers);
-```
-
-## Getting An Owned Value (Cloned)
-
-```rs
-use random_item::random_item;
-
 let messages = Vec::from([
    String::from("Hello, "),
    String::from("fellow "),
@@ -25,6 +15,8 @@ let messages = Vec::from([
 
 let random_message = random_owned_item(&messages);
 ```
+
+## Getting An Owned Value (Cloned)
 
 ```rs
 use random_item::random_item;
