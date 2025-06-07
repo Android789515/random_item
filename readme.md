@@ -23,7 +23,7 @@ let messages = Vec::from([
    String::from("Rustaceans!"),
 ]);
 
-let random_message = random_owned_item(&message);
+let random_message = random_owned_item(&messages);
 ```
 
 ```rs
