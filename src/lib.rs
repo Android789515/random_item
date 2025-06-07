@@ -15,6 +15,24 @@ pub fn random_item<Type>(collection: &[Type]) -> &Type {
     &collection[rand::random_range(0..collection.len())]
 }
 
+/// Gets a random owned item (by cloning) from a sequential collection.
+/// # Example
+/// ```
+/// use random_item::random_owned_item;
+/// 
+/// let messages = Vec::from([
+///    String::from("Hello, "),
+///    String::from("fellow "),
+///    String::from("Rustaceans!"),
+/// ]);
+/// 
+/// let random_message = random_owned_item(&messages);
+/// assert!(messages.contains(&random_message));
+/// ```
+pub fn random_owned_item<Type: Clone>(collection: &[Type]) -> Type {
+    collection[rand::random_range(0..collection.len())].clone()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -31,5 +49,46 @@ mod tests {
         let letters = ['a', 'b', 'c'];
 
         assert!(letters.contains(random_item(&letters)));
+    }
+
+    #[test]
+    fn gets_owned_item_from_vec() {
+        let names = Vec::from([
+            String::from("Aiko"),
+            String::from("Amir"),
+            String::from("Nia"),
+            String::from("Luca"),
+            String::from("Zara"),
+            String::from("Ravi"),
+            String::from("Suki"),
+            String::from("Omar"),
+            String::from("Lila"),
+            String::from("Kian"),
+        ]);
+
+        let random_name = random_owned_item(&names);
+        assert!(names.contains(&random_name));
+    }
+
+    #[test]
+    fn gets_owned_item_from_array() {
+        #[derive(PartialEq, Clone)]
+        struct Shape {
+            sides: u32,
+        }
+
+        let fruits = [
+            Shape { sides: 1 },
+            Shape { sides: 1 },
+            Shape { sides: 2 },
+            Shape { sides: 3 },
+            Shape { sides: 5 },
+            Shape { sides: 8 },
+            Shape { sides: 13 },
+            Shape { sides: 21 },
+        ];
+
+        let random_fruit = random_owned_item(&fruits);
+        assert!(fruits.contains(&random_fruit));
     }
 }
