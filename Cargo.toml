@@ -2,6 +2,10 @@
 name = "random_item"
 version = "0.1.0"
 edition = "2024"
+description = "Easily reference or clone a random item from a sequential collection."
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/Android789515/random_item"
+repository = "https://github.com/Android789515/random_item"
 
 [dependencies]
 rand = "0.9.1"
