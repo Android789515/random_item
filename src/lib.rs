@@ -77,7 +77,7 @@ mod tests {
             sides: u32,
         }
 
-        let fruits = [
+        let shapes = [
             Shape { sides: 1 },
             Shape { sides: 1 },
             Shape { sides: 2 },
@@ -88,7 +88,7 @@ mod tests {
             Shape { sides: 21 },
         ];
 
-        let random_fruit = random_owned_item(&fruits);
-        assert!(fruits.contains(&random_fruit));
+        let random_shape = random_owned_item(&shapes);
+        assert!(shapes.contains(&random_shape));
     }
 }
