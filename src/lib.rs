@@ -30,7 +30,7 @@ pub fn random_item<Type>(collection: &[Type]) -> &Type {
 /// assert!(messages.contains(&random_message));
 /// ```
 pub fn random_owned_item<Type: Clone>(collection: &[Type]) -> Type {
-    collection[rand::random_range(0..collection.len())].clone()
+    random_item(collection).clone()
 }
 
 #[cfg(test)]
