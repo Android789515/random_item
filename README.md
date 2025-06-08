@@ -26,7 +26,7 @@ struct Shape {
    sides: u32,
 }
 
-let fruits = [
+let shapes = [
    Shape { sides: 1 },
    Shape { sides: 1 },
    Shape { sides: 2 },
@@ -37,5 +37,5 @@ let fruits = [
    Shape { sides: 21 },
 ];
 
-let random_fruit = random_owned_item(&fruits);
+let random_shape = random_owned_item(&shapes);
 ```
