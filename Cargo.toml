@@ -6,7 +6,7 @@ description = "Easily reference or clone a random item from a sequential collect
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/Android789515/random_item"
 repository = "https://github.com/Android789515/random_item"
-documentation = "https://docs.rs/random_item/0.1.2/random_item/"
+documentation = "https://docs.rs/random_item/latest/random_item/"
 
 [dependencies]
 rand = "0.9.1"
